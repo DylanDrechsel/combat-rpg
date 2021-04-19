@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import { atom, useRecoilState } from 'recoil';
 import './App.css';
+import Character from "./assests/m1.png"
+import Player from "./playerComponents/Player"
+import CombatMap from "./combatComponets/CombatMap"
+import { Row, Col, Container } from 'react-bootstrap';
+
+
+
+export const gameState = atom({
+	key: 'gameState',
+	default: 'normal'
+})
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [game, setGame] = useRecoilState(gameState)
+
+	if (game === 'normal') {
+		return (
+		  <div className='App'>
+			  <Player skin={Character} />
+		  </div>
+	  );
+	} else if (game === 'combat') {
+		return (
+			<div className='Combat'>
+
+				<Container fluid="md">
+					<Row>
+						<Col sm={5}>
+							<CombatMap />
+						</Col>
+					</Row>
+				</Container>
+
+				<Player skin={Character} />
+			</div>
+		);
+	}
 }
 
 export default App;
