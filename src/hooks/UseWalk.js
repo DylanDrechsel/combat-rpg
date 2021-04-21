@@ -9,7 +9,9 @@ const UseWalk = () => {
 		x: 0,
 		y: 0,
 	});
-	const [combatZone, setCombatZone] = useState(true)
+
+	// COMBAT SET
+	const [combatZone, setCombatZone] = useState(false)
 
 	const directions = {
 		down: 0,
@@ -46,8 +48,11 @@ const UseWalk = () => {
 		if (chance / 2 <= 1) setGameState('combat')
 	}
 
+	
 	useEffect(() => {
-		combatChance();
+		if (combatZone === true) {
+			combatChance();
+		}
 	}, [position])
 
     return {

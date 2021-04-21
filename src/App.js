@@ -6,6 +6,10 @@ import CombatMap from "./combatComponets/CombatMap"
 import { Row, Col, Container } from 'react-bootstrap';
 
 import NewMap from './combatComponets/NewMap'
+import StartMap from './mapComponents/StartMap'
+import StartMapTwo from './mapComponents/StartMapTwo';
+
+
 
 
 
@@ -19,14 +23,12 @@ function App() {
 
 	if (game === 'normal') {
 		return (
-			<div
-				className='App'
-				style={{
-					position: 'relative',
-					width: window.innerWidth,
-					height: window.innerHeight,
-					overflow: 'hidden',
-				}}>
+			<div>
+
+				<div>
+					<StartMapTwo />
+				</div>
+				
 				<Player skin={Character} />
 			</div>
 		);
