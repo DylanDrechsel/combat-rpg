@@ -9,6 +9,7 @@
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
+    "react-css-grid": "^2.0.0-0",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.4.3",
     "react-router": "^5.2.0",

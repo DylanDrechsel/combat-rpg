@@ -5,6 +5,8 @@ import Player from "./playerComponents/Player"
 import CombatMap from "./combatComponets/CombatMap"
 import { Row, Col, Container } from 'react-bootstrap';
 
+import NewMap from './combatComponets/NewMap'
+
 
 
 export const gameState = atom({
@@ -17,21 +19,30 @@ function App() {
 
 	if (game === 'normal') {
 		return (
-		  <div className='App'>
-			  <Player skin={Character} />
-		  </div>
-	  );
+			<div
+				className='App'
+				style={{
+					position: 'relative',
+					width: window.innerWidth,
+					height: window.innerHeight,
+					overflow: 'hidden',
+				}}>
+				<Player skin={Character} />
+			</div>
+		);
 	} else if (game === 'combat') {
 		return (
-			<div className='Combat'>
+			<div className='Combat' >
 
 				<Container fluid="md">
 					<Row>
 						<Col sm={5}>
-							<CombatMap />
+							{/* <CombatMap /> */}
 						</Col>
 					</Row>
 				</Container>
+
+				<NewMap />
 
 				<Player skin={Character} />
 			</div>

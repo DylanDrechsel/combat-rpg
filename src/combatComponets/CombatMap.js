@@ -1,6 +1,7 @@
 import "../App.css"
 import React from 'react';
 import GridSquare from "./GridSquare"
+import PlayerCharacter from './PlayerCharacter'
 import { Row, Col } from "react-bootstrap"
 
 const combatMap = () => {
