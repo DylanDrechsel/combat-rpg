@@ -10,8 +10,8 @@ const Start = ({ startGame, number, didStart }) => {
 	// console.log(didStart)
 
     return (
-			<div onClick={didStart ? null : handleClick} /* className={didStart ? 'tile' : 'start'} */ style={{background: "red"}}>
-				
+			<div onClick={didStart ? null : handleClick} className={didStart ? 'tile' : 'start'} style={{background: "red"}}>
+				{number}
 			</div>
 		);
 };

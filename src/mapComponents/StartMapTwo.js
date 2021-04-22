@@ -5,8 +5,8 @@ const StartMapTwo = () => {
     let count = 300;
     const tileWidth = 32
     const tileHeight = 32
-    const mapWidth = 30
-    const mapHeight = 30
+    const mapWidth = 38
+    const mapHeight = 19
 
     let currentSecond = 0, frameCount = 0, framesLastSecond = 0
     let lastFrameTime = 0
@@ -44,23 +44,59 @@ const StartMapTwo = () => {
     const player = new Character();
 
     let gameMap = [
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-    0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
-    0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-    0, 1, 0, 1, 0, 0, 0, 1, 1, 0,
-    0, 1, 0, 1, 0, 1, 0, 0, 1, 0,
-    0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-    0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
-    0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 3, 2, 2, 7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 5, 5, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 8, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ]
 
-    let stoneRoad = new Image();
-	stoneRoad.src = 'https://i.ibb.co/3hJc3Fg/road-Fixed.png';
+    const grass = new Image();
+    grass.src = 'https://i.ibb.co/SsCxN77/grass.png';
 
-    let water = new Image();
+    const stoneRoad = new Image();
+    stoneRoad.src = 'https://i.ibb.co/1Gx7ct1/stoneroad.png';
+
+    const stoneMossRoad = new Image();
+	stoneMossRoad.src = 'https://i.ibb.co/VLc9vgq/moss-Rock32px.png';
+
+    const halfMossHalfWaterNorth = new Image();
+    halfMossHalfWaterNorth.src =
+			'https://i.ibb.co/Hpfsc7Q/halfstonehalfwater-north.png';
+
+    const halfMossHalfStoneEast = new Image();
+		halfMossHalfStoneEast.src =
+			'https://i.ibb.co/XjGy7ty/halfstonehalfwater-east.png';
+
+    const water = new Image();
 	water.src = 'https://i.ibb.co/0hnbwN1/water.png';
+
+    const rightAngleRockWater = new Image();
+    rightAngleRockWater.src = 'https://i.ibb.co/WprdZYm/rightanglerockwater.png';
+
+    const rightAngleRockWaterTwo = new Image();
+    rightAngleRockWaterTwo.src =
+			'https://i.ibb.co/R0jC94h/rightanglerockwatertwo.png';
+
+    const halfRockHalfGrassSouth = new Image();
+		halfRockHalfGrassSouth.src =
+			'https://i.ibb.co/vqcshQD/halfstonehalfrock.png';
+
+    
 
     
     window.onload = () => {
@@ -68,6 +104,7 @@ const StartMapTwo = () => {
         requestAnimationFrame(drawGame);
         context.font = "bold 10pt sans-serif"
     }
+    
 
     const drawGame = () => {
         console.log(count)
@@ -75,8 +112,15 @@ const StartMapTwo = () => {
         if (context === null || count < 1) { return; }
 
         const sec = Math.floor(Date.now()/1000);
-        let stonePath = context.createPattern(stoneRoad, 'repeat');
-        let waterPath = context.createPattern(water, 'repeat');
+        const iWater = context.createPattern(water, 'repeat');
+        const iStoneMossRoad = context.createPattern(stoneMossRoad, 'repeat');
+        const iStoneRoad = context.createPattern(stoneRoad, 'repeat')
+        const iHalfMossHalfWaterNorth = context.createPattern(halfMossHalfWaterNorth, 'repeat')
+        const iRightAngleRockWater = context.createPattern(rightAngleRockWater, 'repeat');
+        const iHalfRockHalfGrassSouth = context.createPattern(halfRockHalfGrassSouth, 'repeat')
+        const iHalfMossHalfStoneEast = context.createPattern(halfMossHalfStoneEast, 'repeat')
+        const irightAngleRockWaterTwo = context.createPattern(rightAngleRockWaterTwo, 'repeat')
+        const igrass = context.createPattern(grass, 'repeat')
         
         if (sec != currentSecond) {
             currentSecond = sec;
@@ -92,11 +136,41 @@ const StartMapTwo = () => {
 
                 switch(gameMap[((y * mapWidth) +x)]) {
                     case 0:
-                        context.fillStyle = waterPath
+                        context.fillStyle = iWater
                         break;
 
-                    default:
-                        context.fillStyle = stonePath
+                    case 1:
+                        context.fillStyle = iStoneMossRoad
+                        break;
+
+                    case 2:
+                        context.fillStyle = iHalfMossHalfWaterNorth
+                        break;
+
+                    case 3:
+                        context.fillStyle = iRightAngleRockWater
+                        break;
+
+                    case 4:
+                        context.fillStyle = iHalfMossHalfStoneEast;
+                        break;
+
+                    case 5:
+                        context.fillStyle = iStoneRoad
+                        break;
+
+                    case 6:
+                        context.fillStyle = iHalfRockHalfGrassSouth;
+                        break;
+
+                    case 7:
+                        context.fillStyle = irightAngleRockWaterTwo
+                        break;
+
+                    case 8:
+                        context.fillStyle = igrass
+                        break;
+
                 }
 
                 context.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);

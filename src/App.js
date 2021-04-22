@@ -10,12 +10,9 @@ import StartMap from './mapComponents/StartMap'
 import StartMapTwo from './mapComponents/StartMapTwo';
 
 
-
-
-
 export const gameState = atom({
 	key: 'gameState',
-	default: 'normal'
+	default: 'combat'
 })
 
 function App() {
