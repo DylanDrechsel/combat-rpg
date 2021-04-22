@@ -17,9 +17,10 @@
 
 .game-board {
   display: grid;
-  width: 670px;
-  height: 520px;
+  width: 1340px;
+  height: 940px;
   margin: auto;
+  padding-top: 1rem;
 }
 
 .tile {

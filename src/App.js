@@ -6,7 +6,7 @@ import LevelOne from './mapComponents/LevelOne';
 import CombatMap from './combatComponets/CombatMap'
 import { Row, Col, Container } from 'react-bootstrap';
 
-import ToolBox from './mapComponents/ToolBox'
+import CombatInfo from './combatComponets/PlayerCombatInfo'
 
 
 export const gameState = atom({
@@ -30,17 +30,14 @@ function App() {
 		);
 	} else if (game === 'combat') {
 		return (
-			<div className='Combat' >
-
-				<Container fluid="md">
-					<Row>
-						<Col sm={5}>
-							
+			<div className='Combat'>
+				{/* <Container fluid='md'> */}
+					{/* <Row> */}
+						<Col sm={12} style={{backgroundColor: 'black'}}>
+							<CombatMap />
 						</Col>
-					</Row>
-				</Container>
-
-				<CombatMap />
+					{/* </Row> */}
+				{/* </Container> */}
 
 				<Player skin={Character} />
 			</div>

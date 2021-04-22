@@ -4,14 +4,16 @@ import Tile from './Tile'
 import Start from './Start'
 import "../App.css";
 import PlayerCharacter from './PlayerCharacter';
-import EnemyCharacter from './EnemyCharacter'
+import EnemyCharacter from './EnemyCharacter';
+import PlayerCombatInfo from './PlayerCombatInfo';
+import EnemyCombatInfo from './EnemyCombatInfo';
 
 const NewMap = () => {
     const [combatState, setCombatState] = useState({
-		leftWall: [130, 117, 104, 91, 78, 65, 52, 39, 26, 13],
-		rightWall: [118, 105, 92, 79, 66, 53, 40, 27, 14, 1],
-        topWall: [130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118],
-        bottomWall: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+		leftWall: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+		rightWall: [1, 11, 21, 31, 41, 51, 61, 71, 81, 91],
+        topWall: [100, 99, 98, 97, 96, 95, 94, 93, 92, 91],
+        bottomWall: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 	});
 
     const [playerInfo, setPlayerInfo] = useState({
@@ -19,12 +21,12 @@ const NewMap = () => {
         currentTile: [1],
         canMoveTo: [],
         didStart: false,
-        actionPoints: 5
+        actionPoints: 10
     })
 
     const [enemyInfo, setEnemyInfo] = useState({
         health: 100,
-        currentTile: [130],
+        currentTile: [100],
         canMoveTo: [],
         // For some reason the computer needs 2 action points for move...
         actionPoints: 10
@@ -32,7 +34,7 @@ const NewMap = () => {
     
     const createBoard = () => {
         let tileArray = [];
-        for (let counter = 130; counter > 0; counter--) {
+        for (let counter = 100; counter > 0; counter--) {
             tileArray.push(counter)
         }
         return occupyTiles(tileArray)
@@ -46,7 +48,6 @@ const NewMap = () => {
 			playerInfo.currentTile.includes(number) ? (
 				<PlayerCharacter
 					number={number}
-					// startGame={startGame}
 					didStart={playerInfo.didStart}
 				/>
 			) : enemyInfo.currentTile.includes(number) ? (
@@ -63,10 +64,10 @@ const NewMap = () => {
         let updatedCanMoveTo = []
 
         if (!combatState.bottomWall.includes(gamePlayer.currentTile[0])) {
-            updatedCanMoveTo.push(gamePlayer.currentTile[0] - 13)
+            updatedCanMoveTo.push(gamePlayer.currentTile[0] - 10)
             }
         if (!combatState.topWall.includes(gamePlayer.currentTile[0])) {
-            updatedCanMoveTo.push(gamePlayer.currentTile[0] + 13)
+            updatedCanMoveTo.push(gamePlayer.currentTile[0] + 10)
             }
         if (!combatState.leftWall.includes(gamePlayer.currentTile[0])) {
 				updatedCanMoveTo.push(gamePlayer.currentTile[0] + 1);
@@ -99,7 +100,7 @@ const NewMap = () => {
         setPlayerInfo(prevState => ({
             ...prevState,
             currentTile: [number],
-            actionPoints: prevState.actionPoints - 1
+            actionPoints: prevState.actionPoints - 2
         }))  
     }
 
@@ -132,7 +133,7 @@ const NewMap = () => {
             else {
                 setPlayerInfo(prevState => ({
                     ...prevState,
-                    actionPoints: 5
+                    actionPoints: 10
                 }))
                 setEnemyInfo(prevState => ({
                     ...prevState,
@@ -155,11 +156,16 @@ const NewMap = () => {
 
 
     return (
+        <div style={{backgroundColor: 'black', height: '100vh'}}>
+            <PlayerCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo}/>
+            <EnemyCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo}/>
+
 			<div className='game-board'>
-				<Grid width={50} gap={0}>
+				<Grid width={125} gap={0}>
 					{createBoard()}
 				</Grid>
 			</div>
+        </div>
 		);
 };
 
