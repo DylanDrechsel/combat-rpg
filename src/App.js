@@ -2,12 +2,11 @@ import { atom, useRecoilState } from 'recoil';
 import './App.css';
 import Character from "./assests/m1.png"
 import Player from "./playerComponents/Player"
-import CombatMap from "./combatComponets/CombatMap"
+import LevelOne from './mapComponents/LevelOne';
+import CombatMap from './combatComponets/CombatMap'
 import { Row, Col, Container } from 'react-bootstrap';
 
-import NewMap from './combatComponets/NewMap'
-import StartMap from './mapComponents/StartMap'
-import StartMapTwo from './mapComponents/StartMapTwo';
+import ToolBox from './mapComponents/ToolBox'
 
 
 export const gameState = atom({
@@ -23,7 +22,7 @@ function App() {
 			<div>
 
 				<div>
-					<StartMapTwo />
+					<LevelOne />
 				</div>
 				
 				<Player skin={Character} />
@@ -36,12 +35,12 @@ function App() {
 				<Container fluid="md">
 					<Row>
 						<Col sm={5}>
-							{/* <CombatMap /> */}
+							
 						</Col>
 					</Row>
 				</Container>
 
-				<NewMap />
+				<CombatMap />
 
 				<Player skin={Character} />
 			</div>

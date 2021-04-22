@@ -1,4 +1,5 @@
 import React from 'react';
+import Sprite from '../assests/m1.png'
 
 const Start = ({ startGame, number, didStart }) => {
     const handleClick = () => {
@@ -10,7 +11,12 @@ const Start = ({ startGame, number, didStart }) => {
 	// console.log(didStart)
 
     return (
-			<div onClick={didStart ? null : handleClick} className={didStart ? 'tile' : 'start'} style={{background: "red"}}>
+			<div
+				className='tile'
+				onClick={didStart ? null : handleClick}
+				className={didStart ? 'tile' : 'tile'}
+				style={{ background: 'tan' }}>
+				{/* <img src={Sprite}></img> */}
 				{number}
 			</div>
 		);
