@@ -6,27 +6,30 @@ import "../App.css";
 
 const NewMap = () => {
     const [combatState, setCombatState] = useState({
-		startTiles: [130, 118, 13, 1],
+		startTiles: [130, 118, 1],
 		leftWall: [130, 117, 104, 91, 78, 65, 52, 39, 26, 13],
 		rightWall: [118, 105, 92, 79, 66, 53, 40, 27, 14, 1],
 		currentTile: 0,
 		canMoveTo: [],
 		didStart: false,
 	});
-
+    
     const createBoard = () => {
         let tileArray = [];
         for (let counter = 130; counter > 0; counter--) {
             tileArray.push(counter)
         }
+        console.log(tileArray)
         return occupyTiles(tileArray)
     }
 
     console.log(combatState.didStart)
+    console.log(combatState.startTiles)
+    console.log(combatState)
 
 
     const occupyTiles = (tileArray) => {
-		return tileArray.map((number) =>
+		return tileArray.map(number =>
 			combatState.startTiles.includes(number) ? (
 				<Start
 					startGame={startGame}
@@ -43,6 +46,10 @@ const NewMap = () => {
 
     const startGame = (number) => {
         setCombatState({
+            startTiles: combatState.startTiles,
+		    leftWall: combatState.leftWall,
+		    rightWall: combatState.rightWall,
+            canMoveTo: combatState.canMoveTo,
             didStart: true,
             currentTile: number
         }, () => updateCanMoveTo())
@@ -66,15 +73,29 @@ const NewMap = () => {
         console.log(updatedCanMoveTo)
 
         setCombatState({
-            canMoveTo: [updatedCanMoveTo]
+            startTiles: combatState.startTiles,
+		    leftWall: combatState.leftWall,
+		    rightWall: combatState.rightWall,
+            canMoveTo: updatedCanMoveTo,
+            didStart: combatState.didStart,
+            currentTile: combatState.currentTile
         })
     }
 
     const move = (number) => {
         setCombatState({
+            startTiles: combatState.startTiles,
+		    leftWall: combatState.leftWall,
+		    rightWall: combatState.rightWall,
+            canMoveTo: combatState.canMoveTo,
+            didStart: combatState.didStart,
             currentTile: number
         }, () => updateCanMoveTo())
     }
+
+    useEffect(() => {
+			updateCanMoveTo();
+		}, [combatState.currentTile]);
 
 
     return (

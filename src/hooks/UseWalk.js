@@ -11,7 +11,7 @@ const UseWalk = () => {
 	});
 
 	// COMBAT SET
-	const [combatZone, setCombatZone] = useState(false)
+	const [combatZone, setCombatZone] = useState(true)
 
 	const directions = {
 		down: 0,

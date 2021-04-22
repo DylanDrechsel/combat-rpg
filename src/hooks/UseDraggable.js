@@ -15,8 +15,8 @@ const UseDraggable = () => {
 
 			document.body.addEventListener('mousemove', move);
 			document.body.addEventListener('mouseup', () => {
-    			document.body.removeEventListener('mousemove', move);
-					handle.style.pointerEvents = 'initial';
+    		document.body.removeEventListener('mousemove', move);
+				handle.style.pointerEvents = 'initial';
 			});
 		});
 
