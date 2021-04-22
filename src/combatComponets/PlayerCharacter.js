@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assests/m1Single.png'
+import Image from '../assests/m1Single.png'
 
 const PlayerCharacter = ({ number, startGame, didStart }) => {
     // const handleClick = () => {
@@ -13,7 +13,7 @@ const PlayerCharacter = ({ number, startGame, didStart }) => {
 				style={{
 					width: 32,
 					height: 32,
-					backgroundImage: `url(${image})`,
+					backgroundImage: `url(${Image})`,
 					backgroundColor: 'tan',
 					backgroundRepeat: 'no-repeat',
 				}}></div>

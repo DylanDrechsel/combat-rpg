@@ -10,6 +10,8 @@ const NewMap = () => {
     const [combatState, setCombatState] = useState({
 		leftWall: [130, 117, 104, 91, 78, 65, 52, 39, 26, 13],
 		rightWall: [118, 105, 92, 79, 66, 53, 40, 27, 14, 1],
+        topWall: [130, 129, 128, 127, 126, 125, 124, 123, 122, 121, 120, 119, 118],
+        bottomWall: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 	});
 
     const [playerInfo, setPlayerInfo] = useState({
@@ -24,7 +26,8 @@ const NewMap = () => {
         health: 100,
         currentTile: [130],
         canMoveTo: [],
-        actionPoints: 5
+        // For some reason the computer needs 2 action points for move...
+        actionPoints: 10
     })
     
     const createBoard = () => {
@@ -35,7 +38,6 @@ const NewMap = () => {
         return occupyTiles(tileArray)
     }
 
-    console.log(combatState)
     console.log(playerInfo)
     console.log(enemyInfo)
 
@@ -50,34 +52,28 @@ const NewMap = () => {
 			) : enemyInfo.currentTile.includes(number) ? (
                 <EnemyCharacter />
             ) : playerInfo.canMoveTo.includes(number) ? (
-				<Tile move={playerMove} number={number} />
+				<Tile playerMove={playerMove} number={number} />
 			) : (
 				<Tile number={number} />
 			)
 		);
 	};
 
-    // const startGame = (number) => {
-    //     setPlayerInfo(prevState => ({
-    //         ...prevState,
-    //         currentTile: [number]
-    //     }), () => updateCanMoveTo())
-    // }
-
     const updateCanMoveTo = (gamePlayer) => {
         let updatedCanMoveTo = []
 
-        updatedCanMoveTo.push(
-					gamePlayer.currentTile[0] + 13,
-					gamePlayer.currentTile[0] - 13
-				);
-
+        if (!combatState.bottomWall.includes(gamePlayer.currentTile[0])) {
+            updatedCanMoveTo.push(gamePlayer.currentTile[0] - 13)
+            }
+        if (!combatState.topWall.includes(gamePlayer.currentTile[0])) {
+            updatedCanMoveTo.push(gamePlayer.currentTile[0] + 13)
+            }
         if (!combatState.leftWall.includes(gamePlayer.currentTile[0])) {
-					updatedCanMoveTo.push(gamePlayer.currentTile[0] + 1);
-				}
+				updatedCanMoveTo.push(gamePlayer.currentTile[0] + 1);
+			}
         if (!combatState.rightWall.includes(gamePlayer.currentTile[0])) {
-					updatedCanMoveTo.push(gamePlayer.currentTile[0] - 1);
-				}
+				updatedCanMoveTo.push(gamePlayer.currentTile[0] - 1);
+			}
 
         if (gamePlayer === playerInfo) {
             setPlayerInfo(prevState => ({
@@ -104,8 +100,53 @@ const NewMap = () => {
             ...prevState,
             currentTile: [number],
             actionPoints: prevState.actionPoints - 1
-        }), () => updateCanMoveTo())
+        }))  
     }
+
+    //WORKING HERE
+    const computerMove = (number) => {
+        setEnemyInfo(prevState => ({
+            ...prevState,
+            currentTile: [number],
+            actionPoints: prevState.actionPoints - 1
+        }))
+    }
+
+    const computerTurn = () => {
+        setTimeout(() => {
+            if (enemyInfo.currentTile == playerInfo.currentTile[0] - 1 && enemyInfo.actionPoints > 1) {
+                console.log('Right next')
+                setEnemyInfo(prevState => ({
+                ...prevState,
+                actionPoints: prevState.actionPoints - 2
+            }))} 
+            else if (enemyInfo.actionPoints > 1 && enemyInfo.health >= 80) {
+                const goal = playerInfo.currentTile[0]
+
+                const closest = enemyInfo.canMoveTo.reduce((prev, curr) => {
+                    return (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr - 1 : prev )
+                })
+
+                closest === playerInfo.currentTile[0] ? computerMove(closest - 1) : computerMove(closest) 
+            } 
+            else {
+                setPlayerInfo(prevState => ({
+                    ...prevState,
+                    actionPoints: 5
+                }))
+                setEnemyInfo(prevState => ({
+                    ...prevState,
+                    actionPoints: 10
+                }))
+            }
+        }, '500');
+    }
+
+    useEffect(() => {
+        if (playerInfo.actionPoints === 0) {
+           computerTurn()
+            }
+        }, [playerInfo.actionPoints, enemyInfo.actionPoints])
 
     useEffect(() => {
 			updateCanMoveTo(playerInfo);
