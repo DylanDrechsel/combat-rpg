@@ -24,10 +24,14 @@
 
 .tile {
   border-style: solid;
-  /* background: tan; */
+  background: tan;
 }
 
-.selectable {
+.playerMove {
+  background-color: green;
+}
+
+.enemyMove {
   background-color: green;
 }
 
