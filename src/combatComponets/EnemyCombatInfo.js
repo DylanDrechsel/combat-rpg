@@ -2,13 +2,13 @@ import React from 'react';
 import DragHandler from '../img/drag-handle.png';
 import UseDraggable from '../hooks/UseDraggable';
 
-const EnemyCombatInfo = ({ playerInfo, enemyInfo }) => {
-	const { position } = UseDraggable('handle');
+const EnemyCombatInfo = ({ enemyInfo }) => {
+	// const { position } = UseDraggable('enemyInformation');
 
-	if (position.x === 0) {
-		position.x = 1675;
-		position.y = 200;
-	}
+	// if (position.x === 0) {
+	// 	position.x = 1675;
+	// 	position.y = 200;
+	// }
 
 	return (
 		<div>
@@ -16,16 +16,21 @@ const EnemyCombatInfo = ({ playerInfo, enemyInfo }) => {
 				style={{
 					position: 'absolute',
 					border: '1px solid black',
-					top: position.y,
-					left: position.x,
+					top: 200,
+					left: 1675,
 					zIndex: 100,
 					width: 200,
 					height: 500,
 					backgroundColor: 'tan',
 				}}>
-				<img id='handle' src={DragHandler} />
+				<img id='enemyInformation' src={DragHandler} />
 				<p>Enemy Health: {enemyInfo.health}</p>
 				<p>Enemy Action Points: {enemyInfo.actionPoints}</p>
+				<p>
+					Attacks <br />
+					{enemyInfo.attacks[0].name} --
+					{enemyInfo.attacks[0].damage} damage
+				</p>
 			</div>
 		</div>
 	);

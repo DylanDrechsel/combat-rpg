@@ -14,7 +14,7 @@ const Tile = ({number, playerMove}) => {
 				className='tile'
 				onClick={playerMove ? handlePlayerMove : null}
 				className={playerMove ? 'playerMove' : 'tile'}>
-				{number}
+				{/* {number} */}
 			</div>
 		);
     // } else {
