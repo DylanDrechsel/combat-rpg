@@ -7,8 +7,8 @@ const PlayerCharacter = () => {
 			<div className='tile'>
 				<div
 					style={{
-						width: 32,
-						height: 32,
+						width: "100%",
+						height: "100%",
 						backgroundImage: `url(${Image})`,
 						backgroundColor: 'tan',
 						backgroundRepeat: 'no-repeat',

@@ -19,7 +19,7 @@ function App() {
 
 	if (game === 'normal') {
 		return (
-			<div>
+			<div className='App'>
 
 				<div>
 					<LevelOne />
@@ -39,7 +39,6 @@ function App() {
 					{/* </Row> */}
 				{/* </Container> */}
 
-				<Player skin={Character} />
 			</div>
 		);
 	}

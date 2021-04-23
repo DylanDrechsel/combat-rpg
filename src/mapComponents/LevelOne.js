@@ -186,7 +186,7 @@ const StartMapTwo = () => {
  
     return (
 			<div>
-				<canvas id='game' width='10000' height='10000'></canvas>
+				<canvas id='game' width='1000' height='1000'></canvas>
 			</div>
 		);
 };
