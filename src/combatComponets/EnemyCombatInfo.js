@@ -29,7 +29,9 @@ const EnemyCombatInfo = ({ enemyInfo }) => {
 				<p>
 					Attacks <br />
 					{enemyInfo.attacks[0].name} --
-					{enemyInfo.attacks[0].damage} damage
+					{enemyInfo.attacks[0].damage} damage <br />
+					{enemyInfo.attacks[1].name} --
+					{enemyInfo.attacks[1].damage} damage
 				</p>
 			</div>
 		</div>

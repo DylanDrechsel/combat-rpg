@@ -36,6 +36,19 @@
   background-color: green;
 }
 
+.fontLink {
+  font-family: 'VT323';
+  color: red
+}
+
+.startMenu {
+  background: linear-gradient(217deg, rgba(222, 184, 135, .8), rgba(0, 0, 0, 0.616) 70.71%),
+  linear-gradient(127deg, rgba(222, 184, 135, .8), rgb(0, 0, 0) 70.71%),
+  linear-gradient(336deg, rgb(0, 0, 0), rgba(0, 0, 255, 0) 70.71%);
+  width: 100vw;
+  height: 100vh;
+}
+
 /* .Sprite {
   background-image: url("./assests/m1.png");
 } */
