@@ -10,7 +10,8 @@ import PlayerCombatInfo from './PlayerCombatInfo';
 import EnemyCombatInfo from './EnemyCombatInfo';
 
 const NewMap = () => {
-    const [gameState, setGameState] = useRecoilState(gameStateAtom);
+    const [gameState, setGameState] = useRecoilState(gameStateAtom)
+    const [isComputerTurn, setIsComputerTurn] = useState(false)
 
     const [combatState, setCombatState] = useState({
 		leftWall: [9, 19, 29, 39, 49, 59, 69, 79, 89, 99],
@@ -248,7 +249,10 @@ const NewMap = () => {
 
     useEffect(() => {
         if (playerInfo.actionPoints === 0) {
-           computerTurn()
+            setIsComputerTurn(true)
+            computerTurn()
+            } else {
+            setIsComputerTurn(false)
             }
         }, [playerInfo.actionPoints, enemyInfo.actionPoints])
 
@@ -270,18 +274,22 @@ const NewMap = () => {
         }
     }, [enemyInfo.health, playerInfo.health])
 
-
     return (
-        <div style={{backgroundColor: 'black', height: '100vh'}}>
-            <PlayerCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo}/>
-            <EnemyCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo}/>
+			<div style={{ backgroundColor: 'black', height: '100vh' }}>
+				<PlayerCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo} />
+				<EnemyCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo} />
 
-			<div className='game-board'>
-				<Grid width={125} gap={0}>
-					{createBoard()}
-				</Grid>
+				<div className='game-board'>
+					<Grid
+						className={
+							isComputerTurn ? 'disable' : 'null'
+						}
+						width={125}
+						gap={0}>
+						{createBoard()}
+					</Grid>
+				</div>
 			</div>
-        </div>
 		);
 };
 

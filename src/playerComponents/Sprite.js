@@ -9,27 +9,24 @@ const Sprite = ({ image, data, position }) => {
 		x <= 32 ? setX(x + 32) : setX(x - 64);
 	}, [position.x, position.y]);
 
-	// Top invisable wall
-	if (position.y < 160 && position.y > 140 && position.x && position.x > 470 && position.x < 1460 ) {
+	// Top invisible wall
+	if (position.y < 160) {
 		position.y = 160
 	}
 
-	// Bottom invisable wall
-	if (position.y >= 746 && position.x > 470 && position.x < 1460) {
+	// Bottom invisible wall
+	if (position.y >= 746) {
 		position.y = 746
 	}
 
-	// Left invisable wall
-	if (position.y > 156 && position.y <= 752 && position.x < 474) {
+	// Left invisible wall
+	if (position.x < 474) {
 		position.x = 476;
 	}
 
-	// Right invisable wall
-	if (
-		position.x <= 1460 &&
-		position.x > 1454
-	) {
-		position.x = 1454;
+	// Right invisible wall
+	if (position.x > 1458) {
+		position.x = 1458;
 	}
 
 	
