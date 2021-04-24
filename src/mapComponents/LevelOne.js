@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const StartMapTwo = () => {
     let context = null;
@@ -98,11 +98,17 @@ const StartMapTwo = () => {
 
     
 
-    
+    useEffect(() => {
+        setTimeout(() => {
+            context = document.getElementById('game').getContext('2d');
+            requestAnimationFrame(drawGame);
+            context.font = 'bold 10pt sans-serif';
+        }, '100')
+    }, [])
+
+    // MESSING AROUND HERE
     window.onload = () => {
-        context = document.getElementById('game').getContext('2d');
-        requestAnimationFrame(drawGame);
-        context.font = "bold 10pt sans-serif"
+        
     }
     
 

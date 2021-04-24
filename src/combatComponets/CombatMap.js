@@ -25,7 +25,8 @@ const NewMap = () => {
         canMoveTo: [],
         didStart: false,
         actionPoints: 5,
-        attacks: [{
+        attacks: [
+            {
             name: "bash",
             damage: 12
         }]
@@ -35,10 +36,16 @@ const NewMap = () => {
         health: 100,
         currentTile: [95],
         actionPoints: 5,
-        attacks: [{
+        attacks: [
+            {
             name: "Spook",
             damage: 8
-        }]
+            },
+            {
+            name: "Ghost Punch",
+            damage: 11
+            }
+    ]   
     })
     
     const createBoard = () => {
@@ -49,7 +56,7 @@ const NewMap = () => {
         return occupyTiles(tileArray)
     }
 
-    console.log(playerInfo.health)
+    // console.log(playerInfo.health)
     // console.log(enemyInfo.currentTile)
 
     const occupyTiles = (tileArray) => {
@@ -217,7 +224,7 @@ const NewMap = () => {
 					enemyInfo.actionPoints > 0)
 				) {
 				    computerAttack(enemyInfo.attacks)
-			} else if (enemyInfo.actionPoints > 0 && enemyInfo.health >= 80) {
+			} else if (enemyInfo.actionPoints > 0 && enemyInfo.health >= 0) {
 				computerMove(
 					playerLocationY,
 					playerLocationX,
