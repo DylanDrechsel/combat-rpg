@@ -9,39 +9,31 @@ const StartMapTwo = () => {
     const mapHeight = 19
 
     let currentSecond = 0, frameCount = 0, framesLastSecond = 0
-    let lastFrameTime = 0
-
-    const keysDown = {
-        37: false,
-        38: false,
-        39: false,
-        40: false
-    }
 
     
 
-    class Character {
-        tileForm = [1, 1]
-        tileTo = [1, 1]
-        timeMoved = 0
-        dimension = [32, 32];
-        position = [45, 45]
-        delayMove = 700;
+    // class Character {
+    //     tileForm = [1, 1]
+    //     tileTo = [1, 1]
+    //     timeMoved = 0
+    //     dimension = [32, 32];
+    //     position = [45, 45]
+    //     delayMove = 700;
 
-        plactAt(x, y) {
-            this.tileFrom = [x, y]
-            this.tileTo = [x, y]
-            this.position = [((tileWidth * x) + ((tileWidth - this.dimension[0]) / 2)), ((tileHeight * y) + ((tileHeight - this.dimension[1]) / 2))]
-        }
+    //     plactAt(x, y) {
+    //         this.tileFrom = [x, y]
+    //         this.tileTo = [x, y]
+    //         this.position = [((tileWidth * x) + ((tileWidth - this.dimension[0]) / 2)), ((tileHeight * y) + ((tileHeight - this.dimension[1]) / 2))]
+    //     }
 
-        processmovement(t) {
+    //     processmovement(t) {
 
-        }
-    }
+    //     }
+    // }
 
     
     
-    const player = new Character();
+    // const player = new Character();
 
     let gameMap = [
     5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -106,15 +98,7 @@ const StartMapTwo = () => {
         }, '100')
     }, [])
 
-    // MESSING AROUND HERE
-    window.onload = () => {
-        
-    }
-    
-
-    const drawGame = () => {
-        console.log(count)
-        
+    const drawGame = () => {        
         if (context === null || count < 1) { return; }
 
         const sec = Math.floor(Date.now()/1000);
@@ -191,8 +175,8 @@ const StartMapTwo = () => {
 
  
     return (
-			<div>
-				<canvas id='game' width='1000' height='1000'></canvas>
+			<div /* style={{ 'margin-top': '10vh'}} */>
+				<canvas id='game' width='1000' height='1000' />
 			</div>
 		);
 };

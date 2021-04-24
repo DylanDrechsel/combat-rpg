@@ -8,6 +8,7 @@ import Player from "./playerComponents/Player"
 import LevelOne from './mapComponents/LevelOne';
 import CombatMap from './combatComponets/CombatMap'
 import StartScreen from './menuComponents/StartScreen'
+import DeathScreen from './menuComponents/DeathScreen'
 import { Row, Col, Container } from 'react-bootstrap';
 
 export const gameState = atom({
@@ -55,6 +56,12 @@ function App() {
 
 			</div>
 		);
+	} else if (game === 'death') {
+		return (
+			<div className='App'>
+				<DeathScreen />
+			</div>
+		)
 	}
 }
 

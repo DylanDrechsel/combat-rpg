@@ -262,7 +262,13 @@ const NewMap = () => {
                 setGameState('normal')
             }, '5000')
         }
-    }, [enemyInfo.health])
+
+        if (playerInfo.health <= 0) {
+            setTimeout(() => {
+                setGameState('death')
+            }, '5000')
+        }
+    }, [enemyInfo.health, playerInfo.health])
 
 
     return (

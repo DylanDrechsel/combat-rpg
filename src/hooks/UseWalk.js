@@ -6,12 +6,12 @@ const UseWalk = () => {
 	const [gameState, setGameState] = useRecoilState(gameStateAtom)
     const [dir, setDir] = useState(0);
     const [position, setPosition] = useState({
-		x: 0,
-		y: 0,
+		x: 484,
+		y: 174,
 	});
 
 	// COMBAT SET
-	const [combatZone, setCombatZone] = useState(true)
+	const [combatZone, setCombatZone] = useState(false)
 
 	const directions = {
 		down: 0,
