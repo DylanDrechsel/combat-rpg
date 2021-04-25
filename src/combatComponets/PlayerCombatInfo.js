@@ -23,7 +23,7 @@ const PlayerCombatInfo = ({ playerInfo }) => {
 						height: 500,
 						backgroundColor: 'tan',
 					}}>
-					<img id='handle' src={DragHandler} />
+					<img id='handle' src={DragHandler} /> <b>
 					<h1>Player</h1>
 					<p>Health: {playerInfo.health}</p>
 					<p>Action Points: {playerInfo.actionPoints}</p>
@@ -31,7 +31,7 @@ const PlayerCombatInfo = ({ playerInfo }) => {
 						Attacks <br />
 						{playerInfo.attacks[0].name} -- 
 						{playerInfo.attacks[0].damage} damage
-					</p>
+					</p></b>
 				</div>
 			</div>
 		);

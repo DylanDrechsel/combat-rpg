@@ -57,8 +57,8 @@ const NewMap = () => {
         return occupyTiles(tileArray)
     }
 
-    // console.log(playerInfo.health)
-    // console.log(enemyInfo.currentTile)
+    // console.log(playerInfo)
+    // console.log(enemyInfo)
 
     const occupyTiles = (tileArray) => {
 		return tileArray.map((number) =>
@@ -68,7 +68,7 @@ const NewMap = () => {
 					didStart={playerInfo.didStart}
 				/>
 			) : enemyInfo.currentTile.includes(number) ? (
-                <EnemyCharacter player={playerInfo} enemy={enemyInfo} attack={playerAttack}/>
+                <EnemyCharacter player={playerInfo} enemy={enemyInfo} attack={playerAttack} />
             ) : playerInfo.canMoveTo.includes(number) ? (
 				<Tile playerMove={playerMove} number={number} />
 			) : (
@@ -257,20 +257,20 @@ const NewMap = () => {
         }, [playerInfo.actionPoints, enemyInfo.actionPoints])
 
     useEffect(() => {
-			updateCanMoveTo();
-		}, [playerInfo.currentTile]);
+		updateCanMoveTo();
+	}, [playerInfo.currentTile]);
 
     useEffect(() => {
         if (enemyInfo.health <= 0) {
             setTimeout(() => {
                 setGameState('normal')
-            }, '5000')
+            }, '1000')
         }
 
         if (playerInfo.health <= 0) {
             setTimeout(() => {
                 setGameState('death')
-            }, '5000')
+            }, '1000')
         }
     }, [enemyInfo.health, playerInfo.health])
 
