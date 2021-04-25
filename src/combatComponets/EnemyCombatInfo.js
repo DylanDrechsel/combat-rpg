@@ -3,13 +3,6 @@ import DragHandler from '../img/drag-handle.png';
 import UseDraggable from '../hooks/UseDraggable';
 
 const EnemyCombatInfo = ({ enemyInfo }) => {
-	// const { position } = UseDraggable('enemyInformation');
-
-	// if (position.x === 0) {
-	// 	position.x = 1675;
-	// 	position.y = 200;
-	// }
-
 	return (
 		<div>
 			<div

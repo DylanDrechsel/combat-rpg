@@ -60,10 +60,6 @@ const StartScreen = () => {
 				style={{ 'padding-top': '10vh', 'overflow-x': 'hidden' }}>
 				<Container fluid>
 
-					{/* <Col>
-						<HowToPlay />
-					</Col> */}
-
 					<Row className='justify-content-md-center'>
 						<Col md='auto'>
 							<motion.div

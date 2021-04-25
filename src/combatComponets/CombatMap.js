@@ -58,9 +58,6 @@ const NewMap = () => {
         return occupyTiles(tileArray)
     }
 
-    // console.log(playerInfo)
-    // console.log(enemyInfo)
-
     const occupyTiles = (tileArray) => {
 		return tileArray.map((number) =>
 			playerInfo.currentTile.includes(number) ? (
@@ -126,7 +123,6 @@ const NewMap = () => {
         }))
     }
 
-    //WORKING HERE
     const findLocations = (playerLocation, enemyLocation) => {
         let playerLocationY, playerLocationX, enemyLocationY, enemyLocationX;
 
@@ -245,8 +241,6 @@ const NewMap = () => {
 			}
         }, '500');
     }
-
-    // END WORKING AREA
 
     useEffect(() => {
         if (playerInfo.actionPoints === 0) {

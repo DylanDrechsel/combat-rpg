@@ -8,11 +8,13 @@ import AudioFile from '../../assests/music/RpgMap-Death.mp3';
 const RestartButton = () => {
     const [gameState, setGameState] = useRecoilState(gameStateAtom)
 	const [playbackRate, setPlaybackRate] = useState(.75);
+	
 	const [play, { stop }] = useSound(AudioFile, {
 		volume: 0.15,
 		playbackRate,
 		interrupt: true,
 	});
+
     const handleRestart = () => {
 		stop()
         setGameState('startMenu')

@@ -35,7 +35,7 @@ const HowToPlay = () => {
 					Attack: <br />
 					<p style={{ 'margin-left': '20px' }}>
 						Cost 1 action point. Can only attack when enemy is one space away
-						from you in non-diagonal direction. Valid attacks are indicated by
+						from you in a non-diagonal direction. Valid attacks are indicated by
 						the red square on the map.
 					</p>
 					<br />
