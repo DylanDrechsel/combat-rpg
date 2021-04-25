@@ -9,11 +9,12 @@ import LevelOne from './mapComponents/LevelOne';
 import CombatMap from './combatComponets/CombatMap'
 import StartScreen from './menuComponents/StartScreen'
 import DeathScreen from './menuComponents/DeathScreen'
+import VictoryScreen from './menuComponents/VictoryScreen'
 import { Row, Col, Container } from 'react-bootstrap';
 
 export const gameState = atom({
 	key: 'gameState',
-	default: 'death'
+	default: 'victory'
 })
 
 export const characterState = atom({
@@ -62,6 +63,12 @@ function App() {
 				<DeathScreen />
 			</div>
 		)
+	} else if (game === 'victory') {
+		return (
+			<div>
+				<VictoryScreen />
+			</div>
+		);
 	}
 }
 

@@ -9,11 +9,13 @@
     "bootstrap": "^4.6.0",
     "framer-motion": "^4.1.9",
     "react": "^17.0.2",
+    "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.5.2",
     "react-css-grid": "^2.0.0-0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "recoil": "^0.2.0",
+    "use-sound": "^2.0.2",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

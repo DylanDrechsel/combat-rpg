@@ -1,4 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import useSound from 'use-sound';
+import AudioFile from '../assests/music/RpgMap-Death.mp3'
+
 
 const StartMapTwo = () => {
     let context = null;
@@ -7,33 +10,14 @@ const StartMapTwo = () => {
     const tileHeight = 32
     const mapWidth = 38
     const mapHeight = 19
+    const [playbackRate, setPlaybackRate] = useState(1);
+	const [play, { stop }] = useSound(AudioFile, {
+		volume: 0.15,
+		playbackRate,
+		interrupt: true,
+	});
 
-    let currentSecond = 0, frameCount = 0, framesLastSecond = 0
-
-    
-
-    // class Character {
-    //     tileForm = [1, 1]
-    //     tileTo = [1, 1]
-    //     timeMoved = 0
-    //     dimension = [32, 32];
-    //     position = [45, 45]
-    //     delayMove = 700;
-
-    //     plactAt(x, y) {
-    //         this.tileFrom = [x, y]
-    //         this.tileTo = [x, y]
-    //         this.position = [((tileWidth * x) + ((tileWidth - this.dimension[0]) / 2)), ((tileHeight * y) + ((tileHeight - this.dimension[1]) / 2))]
-    //     }
-
-    //     processmovement(t) {
-
-    //     }
-    // }
-
-    
-    
-    // const player = new Character();
+    // let currentSecond = 0, frameCount = 0, framesLastSecond = 0
 
     let gameMap = [
     5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -52,8 +36,8 @@ const StartMapTwo = () => {
     5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ]
 
@@ -112,13 +96,13 @@ const StartMapTwo = () => {
         const irightAngleRockWaterTwo = context.createPattern(rightAngleRockWaterTwo, 'repeat')
         const igrass = context.createPattern(grass, 'repeat')
         
-        if (sec != currentSecond) {
-            currentSecond = sec;
-            framesLastSecond = frameCount;
-            frameCount = 1;
-        } else {
-            frameCount++
-        }
+        // if (sec != currentSecond) {
+        //     currentSecond = sec;
+        //     framesLastSecond = frameCount;
+        //     frameCount = 1;
+        // } else {
+        //     frameCount++
+        // }
 
         for (let y = 0; y < mapHeight; y++) {
             for (let x = 0; x < mapWidth; x++) {
@@ -167,15 +151,17 @@ const StartMapTwo = () => {
             }
         }
 
-        context.fillStyle = "red"
-        context.fillText("FPS: " + framesLastSecond, 10, 20)
+        // context.fillStyle = "red"
+        // context.fillText("FPS: " + framesLastSecond, 10, 20)
 
         requestAnimationFrame(drawGame);
     }
 
  
     return (
-			<div /* style={{ 'margin-top': '10vh'}} */>
+			<div
+				onMouseEnter={play}
+				style={{ /* 'margin-top': '10vh' */ height: '100vh', width: '100vh' }}>
 				<canvas id='game' width='1000' height='1000' />
 			</div>
 		);
