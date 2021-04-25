@@ -10,7 +10,7 @@ import CombatMap from './combatComponets/CombatMap'
 import StartScreen from './menuComponents/StartScreen'
 import DeathScreen from './menuComponents/DeathScreen'
 import VictoryScreen from './menuComponents/VictoryScreen'
-import { Row, Col, Container } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 export const gameState = atom({
 	key: 'gameState',
@@ -47,14 +47,9 @@ function App() {
 	} else if (game === 'combat') {
 		return (
 			<div className='Combat'>
-				{/* <Container fluid='md'> */}
-					{/* <Row> */}
-						<Col sm={12} style={{backgroundColor: 'black'}}>
-							<CombatMap />
-						</Col>
-					{/* </Row> */}
-				{/* </Container> */}
-
+				<Col sm={12} style={{backgroundColor: 'black'}}>
+					<CombatMap />
+				</Col>
 			</div>
 		);
 	} else if (game === 'death') {

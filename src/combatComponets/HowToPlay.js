@@ -40,7 +40,7 @@ const HowToPlay = () => {
 					</p>
 					<br />
                     <p>
-                        If you kill the enemy youll go back to the map. If the enemy kills you your journey ends here...
+                        If you kill the enemy you'll go back to the map. If the enemy kills you your journey ends here...
                     </p>
 				</p>
 			</Modal.Body>

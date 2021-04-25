@@ -263,15 +263,11 @@ const NewMap = () => {
 
     useEffect(() => {
         if (enemyInfo.health <= 0) {
-            setTimeout(() => {
-                setGameState('normal')
-            }, '1000')
+            setGameState('normal')
         }
 
         if (playerInfo.health <= 0) {
-            setTimeout(() => {
-                setGameState('death')
-            }, '1000')
+            setGameState('death')
         }
     }, [enemyInfo.health, playerInfo.health])
 

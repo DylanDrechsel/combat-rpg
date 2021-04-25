@@ -17,28 +17,26 @@ const StartMapTwo = () => {
 		interrupt: true,
 	});
 
-    // let currentSecond = 0, frameCount = 0, framesLastSecond = 0
-
     let gameMap = [
     5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 3, 2, 2, 7, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 5, 5, 5, 5, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 8, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 1, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 3, 2, 2, 7, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 5, 5, 1, 1, 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 9, 11, 11, 10, 1, 1, 1, 9, 10, 1, 1, 1, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 6, 6, 6, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 0, 8, 8, 8, 0, 0, 6, 6, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 8, 8, 8, 8, 8, 0, 0, 8, 8, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 5, 5, 5, 5, 5, 5, 5, 5, 5, 4, 0, 0, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 8, 8, 0, 8, 8, 8, 8, 8, 8, 6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 0, 0, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 8, 8, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 5, 5, 4, 0, 7, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 4, 0, 0, 8, 8, 0, 0, 0, 0, 8, 8, 8, 8, 8, 0, 0, 0, 0, 12, 5, 5, 4, 5, 5, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 3, 2, 5, 8, 8, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 0, 12, 5, 5, 4, 10, 5, 5, 5, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 5, 8, 8, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 0, 0, 0, 12, 5, 5, 4, 0, 10, 5, 5, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    5, 5, 5, 5, 5, 5, 8, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 0, 0, 0, 12, 5, 5, 4, 0, 0, 11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    11, 11, 11, 11, 11, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 5, 5, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 1, 1, 1, 1, 1,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 0, 0, 0, 0, 0,
     ]
 
     const grass = new Image();
@@ -68,9 +66,23 @@ const StartMapTwo = () => {
     rightAngleRockWaterTwo.src =
 			'https://i.ibb.co/R0jC94h/rightanglerockwatertwo.png';
 
+    const rightAngleRockWaterThree = new Image();
+    rightAngleRockWaterThree.src = 'https://i.ibb.co/d43pP5W/right-Angle2.png';
+
+    const rightAngleRockWaterFour = new Image();
+    rightAngleRockWaterFour.src = 'https://i.ibb.co/cN1hGRv/right-Angle4.png';
+
     const halfRockHalfGrassSouth = new Image();
 		halfRockHalfGrassSouth.src =
 			'https://i.ibb.co/vqcshQD/halfstonehalfrock.png';
+
+    const halfRockHalfWaterSouth = new Image();
+    halfRockHalfWaterSouth.src =
+			'https://i.ibb.co/LStLHSW/Webp-net-resizeimage-1.png';
+
+    const halfRockHalfWaterEast = new Image();
+    halfRockHalfWaterEast.src =
+			'https://i.ibb.co/qM8xzhy/Webp-net-resizeimage-2.png';
 
     
 
@@ -85,7 +97,6 @@ const StartMapTwo = () => {
     const drawGame = () => {        
         if (context === null || count < 1) { return; }
 
-        const sec = Math.floor(Date.now()/1000);
         const iWater = context.createPattern(water, 'repeat');
         const iStoneMossRoad = context.createPattern(stoneMossRoad, 'repeat');
         const iStoneRoad = context.createPattern(stoneRoad, 'repeat')
@@ -95,14 +106,10 @@ const StartMapTwo = () => {
         const iHalfMossHalfStoneEast = context.createPattern(halfMossHalfStoneEast, 'repeat')
         const irightAngleRockWaterTwo = context.createPattern(rightAngleRockWaterTwo, 'repeat')
         const igrass = context.createPattern(grass, 'repeat')
-        
-        // if (sec != currentSecond) {
-        //     currentSecond = sec;
-        //     framesLastSecond = frameCount;
-        //     frameCount = 1;
-        // } else {
-        //     frameCount++
-        // }
+        const irightAngleRockWaterThree = context.createPattern(rightAngleRockWaterThree, 'repeat')
+        const irightAngleRockWaterFour = context.createPattern(rightAngleRockWaterFour, 'repeat')
+        const iHalfRockHalfWaterSouth = context.createPattern(halfRockHalfWaterSouth, 'repeat')
+        const iHalfRockHalfWaterEast = context.createPattern(halfRockHalfWaterEast, 'repeat')
 
         for (let y = 0; y < mapHeight; y++) {
             for (let x = 0; x < mapWidth; x++) {
@@ -145,14 +152,27 @@ const StartMapTwo = () => {
                         context.fillStyle = igrass
                         break;
 
+                    case 9:
+                        context.fillStyle = irightAngleRockWaterThree;
+                        break;
+
+                    case 10:
+                        context.fillStyle = irightAngleRockWaterFour;
+                        break;
+
+                    case 11:
+                        context.fillStyle = iHalfRockHalfWaterSouth;
+                        break;
+
+                    case 12:
+                        context.fillStyle = iHalfRockHalfWaterEast;
+                        break;
+
                 }
 
                 context.fillRect(x * tileWidth, y * tileHeight, tileWidth, tileHeight);
             }
         }
-
-        // context.fillStyle = "red"
-        // context.fillText("FPS: " + framesLastSecond, 10, 20)
 
         requestAnimationFrame(drawGame);
     }
@@ -161,7 +181,7 @@ const StartMapTwo = () => {
     return (
 			<div
 				onMouseEnter={play}
-				style={{ /* 'margin-top': '10vh' */ height: '100vh', width: '100vh' }}>
+				style={{ height: '100vh', width: '100vh' }}>
 				<canvas id='game' width='1000' height='1000' />
 			</div>
 		);

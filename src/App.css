@@ -6,8 +6,8 @@
   width: 100vw;
   height: 100vh;
   /* font-size: 1rem;
-  position: relative;
-  overflow: hidden; */
+  position: relative; */
+  overflow: hidden;
 }
 
 .GridBoard {
@@ -57,7 +57,3 @@
 .disable {
   pointer-events: none;
 }
-
-/* .Sprite {
-  background-image: url("./assests/m1.png");
-} */
