@@ -14,7 +14,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 
 export const gameState = atom({
 	key: 'gameState',
-	default: 'victory'
+	default: 'startMenu'
 })
 
 export const characterState = atom({
