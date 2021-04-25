@@ -1,7 +1,10 @@
 import '../App.css';
 import React, { useEffect, useState } from 'react';
+import { gameState as gameStateAtom } from '../App';
+import { useRecoilState } from 'recoil';
 
 const Sprite = ({ image, data, position }) => {
+	const [gameState, setGameState] = useRecoilState(gameStateAtom);
 	const { y, width, height } = data;
 	const [x, setX] = useState(0);
 
@@ -29,8 +32,9 @@ const Sprite = ({ image, data, position }) => {
 		position.x = 1458;
 	}
 
-	
-	// console.log(position.x, position.y);
+	if (position.y <= 718 && position.y >= 664 && position.x <= 1460 && position.x >= 1456) {
+		setGameState('victory')
+	}
 
 	return (
 		<div

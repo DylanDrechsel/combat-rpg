@@ -9,36 +9,43 @@ import MaleOne from '../assests/m1.png';
 import MaleTwo from '../assests/m2.png';
 import FemaleOne from '../assests/f1.png';
 import FemaleTwo from '../assests/f2.png';
-
-
+import useSound from 'use-sound';
+import StartMenuAudio from '../assests/music/StartMenuAgain.mp3'
 
 const StartScreen = () => {
     const [game, setGame] = useRecoilState(gameStateAtom)
     const [character, setCharacter] = useRecoilState(characterStateAtom)
     const [x, setX] = useState(0);
-
-    const handleGameStart = () => {
-            setGame('normal');
-    }
+	const [playbackRate, setPlaybackRate] = useState(0.90)
+	const [play, {stop}] = useSound(StartMenuAudio, {
+		volume: 0.15,
+		playbackRate,
+		interrupt: true
+	});
 
     const handleMaleOneSelect = () => {
-        setCharacter('m1')
-        setGame('normal');
+			setCharacter('m1')
+			setGame('normal');
+			stop();
+		
     }
     
     const handleMaleTwoSelect = () => {
-        setCharacter('m2')
-        setGame('normal');
+			setCharacter('m2')
+			setGame('normal');
+			stop();
     }
 
     const handleFemaleOneSelect = () => {
-        setCharacter('f1')
-        setGame('normal');
+			setCharacter('f1')
+			setGame('normal');
+			stop();
     }
 
     const handleFemaleTwoSelect = () => {
-        setCharacter('f2')
-        setGame('normal');
+			setCharacter('f2')
+			setGame('normal');
+			stop();
     }
 
     useEffect(() => {
@@ -48,7 +55,9 @@ const StartScreen = () => {
 	}, [x]);
 
     return (
-			<div style={{ 'padding-top': '10vh', 'overflow-x': 'hidden' }}>
+			<div
+				onMouseEnter={play}
+				style={{ 'padding-top': '10vh', 'overflow-x': 'hidden' }}>
 				<Container fluid>
 					<Row className='justify-content-md-center'>
 						<Col md='auto'>
