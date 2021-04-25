@@ -1,5 +1,4 @@
 import React from 'react';
-import React from 'react';
 import DragHandler from '../img/drag-handle.png';
 import UseDraggable from '../hooks/UseDraggable';
 

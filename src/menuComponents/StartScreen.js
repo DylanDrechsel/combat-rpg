@@ -11,6 +11,7 @@ import FemaleOne from '../assests/f1.png';
 import FemaleTwo from '../assests/f2.png';
 import useSound from 'use-sound';
 import StartMenuAudio from '../assests/music/StartMenuAgain.mp3'
+import HowToPlay from './StartScreenComponents/HowToPlay'
 
 const StartScreen = () => {
     const [game, setGame] = useRecoilState(gameStateAtom)
@@ -27,7 +28,6 @@ const StartScreen = () => {
 			setCharacter('m1')
 			setGame('normal');
 			stop();
-		
     }
     
     const handleMaleTwoSelect = () => {
@@ -59,6 +59,11 @@ const StartScreen = () => {
 				onMouseEnter={play}
 				style={{ 'padding-top': '10vh', 'overflow-x': 'hidden' }}>
 				<Container fluid>
+
+					{/* <Col>
+						<HowToPlay />
+					</Col> */}
+
 					<Row className='justify-content-md-center'>
 						<Col md='auto'>
 							<motion.div
@@ -87,7 +92,7 @@ const StartScreen = () => {
 								className='mb-2'
 								style={{ 'margin-top': '35vh', width: '100vw' }}>
 								<h1 style={{ 'font-family': 'VT323', color: 'white' }}>
-									Please Select your Character!
+									Please Select your Adventurer!
 								</h1>
 								<Button
 									variant='primary'
@@ -147,6 +152,11 @@ const StartScreen = () => {
 										}}></motion.div>
 								</Button>
 							</div>
+							
+							<div style={{ 'padding-left': '4vh'}}>
+								<HowToPlay />
+							</div>
+
 						</Col>
 					</Row>
 

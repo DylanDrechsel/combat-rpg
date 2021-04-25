@@ -1,6 +1,6 @@
 import React from 'react';
 import {Animated} from "react-animated-css";
-import PlayAgainButton from './StartScreenComponents/PlayAgainButton'
+import PlayAgainButton from './VictoryScreenComponents/PlayAgainButton'
 
 const VictoryScreen = () => {
 
