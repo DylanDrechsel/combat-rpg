@@ -8,6 +8,7 @@ import PlayerCharacter from './PlayerCharacter';
 import EnemyCharacter from './EnemyCharacter';
 import PlayerCombatInfo from './PlayerCombatInfo';
 import EnemyCombatInfo from './EnemyCombatInfo';
+import HowToPlay from './HowToPlay';
 
 const NewMap = () => {
     const [gameState, setGameState] = useRecoilState(gameStateAtom)
@@ -276,6 +277,7 @@ const NewMap = () => {
 
     return (
 			<div style={{ backgroundColor: 'black', height: '100vh' }}>
+                <HowToPlay />
 				<PlayerCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo} />
 				<EnemyCombatInfo playerInfo={playerInfo} enemyInfo={enemyInfo} />
 
