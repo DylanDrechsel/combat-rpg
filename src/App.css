@@ -28,6 +28,11 @@
   background: tan;
 }
 
+.attackTile {
+  border-style: solid;
+  background: rgb(255, 0, 0);
+}
+
 .playerMove {
   background-color: green;
 }

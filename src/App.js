@@ -13,13 +13,23 @@ import { Row, Col, Container } from 'react-bootstrap';
 
 export const gameState = atom({
 	key: 'gameState',
-	default: 'combat'
+	default: 'startMenu'
 })
 
 export const characterState = atom({
 	key: 'chatacterState',
 	default: 'm1'
 })
+
+// export const locationXState = atom({
+// 	key: 'locationXState',
+// 	default: 484
+// })
+
+// export const locationYState = atom({
+// 	key: 'locationYState',
+// 	default: 174,
+// });
 
 function App() {
 	const [game, setGame] = useRecoilState(gameState)

@@ -30,7 +30,7 @@ const Sprite = ({ image, data, position }) => {
 	}
 
 	
-	console.log(position.x, position.y);
+	// console.log(position.x, position.y);
 
 	return (
 		<div
