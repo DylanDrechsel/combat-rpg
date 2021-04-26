@@ -6,7 +6,7 @@ import { Animated } from 'react-animated-css';
 
 const DeathScreen = () => {
     return (
-			<div style={{ 'overflow-y': 'hidden', height: '100vh' }}>
+			<div style={{ overflow: 'hidden', height: '100vh' }}>
 
 					<Animated
 						animationIn='pulse'

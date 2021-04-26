@@ -7,7 +7,7 @@ const VictoryScreen = () => {
     return (
 			<div
 				style={{
-					'overflow-y': 'hidden',
+					overflow: 'hidden',
 					height: '100vh',
 					backgroundColor: 'tan',
 				}}>
