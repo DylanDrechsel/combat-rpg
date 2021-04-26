@@ -57,7 +57,7 @@ const UseWalk = () => {
 
 	const combatChance = () => {
 		const chance = (Math.floor(Math.random() * 100) + 1 / 2)
-		if (chance / 2 <= .5) {
+		if (chance / 2 <= .3) {
 			setGameState('combat')
 		}
 	}

@@ -21,27 +21,28 @@ const HowToPlay = () => {
 					backgroundColor: 'black',
 					color: 'white',
 				}}>
-				<p>
+				<p style={{ 'font-size': '20px' }}>
 					Both you and the enemy have a total of 5 action points to spend per
 					turn. Once you use all your action points your turn is over. There are
 					two actions you can choose: <br />
 					<br />
 					Move: <br />
-					<p style={{ 'margin-left': '20px' }}>
+					<p style={{ 'margin-left': '20px', 'font-size': '20px' }}>
 						Cost 1 action points. Valid moves are indicated by the green squares
 						on the map.
 					</p>
 					<br />
 					Attack: <br />
-					<p style={{ 'margin-left': '20px' }}>
+					<p style={{ 'margin-left': '20px', 'font-size': '20px' }}>
 						Cost 1 action point. Can only attack when enemy is one space away
 						from you in a non-diagonal direction. Valid attacks are indicated by
 						the red square on the map.
 					</p>
 					<br />
-                    <p>
-                        If you kill the enemy you'll go back to the map. If the enemy kills you your journey ends here...
-                    </p>
+					<p>
+						If you kill the enemy you'll go back to the map. If the enemy kills
+						you your journey ends here...
+					</p>
 				</p>
 			</Modal.Body>
 
