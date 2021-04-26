@@ -18,7 +18,7 @@ export const gameState = atom({
 })
 
 export const characterState = atom({
-	key: 'chatacterState',
+	key: 'characterState',
 	default: 'm1'
 })
 
