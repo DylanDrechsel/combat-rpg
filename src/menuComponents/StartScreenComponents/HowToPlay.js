@@ -9,7 +9,10 @@ const HowToPlay = () => {
 
     return (
 			<div>
-				<Button variant='primary' onClick={handleShow}>
+				<Button
+					variant='primary'
+					onClick={handleShow}
+					style={{ 'font-family': 'VT323' }}>
 					How To Play!
 				</Button>
 
@@ -34,9 +37,9 @@ const HowToPlay = () => {
 							Greetings Adventurer, <br />
 							<br />
 							I heard you boasting obnoxiously at the tavern last night about
-							your skill with the blade and the many dangers you have faced in your life. If
-							you're truely as tough as you claim to be maybe you can help our
-							small village with a problem. <br />
+							your skill with the blade and the many dangers you have faced in
+							your life. If you're truely as tough as you claim to be maybe you
+							can help our small village with a problem. <br />
 							<br />
 							There are small ruins outside of the village that hasnt been a
 							problem. Recently though people have been reporting stranges
@@ -52,7 +55,8 @@ const HowToPlay = () => {
 						</p>
 					</Modal.Body>
 
-					<Modal.Footer style={{ backgroundColor: 'black' }}>
+					<Modal.Footer
+						style={{ backgroundColor: 'black', 'font-family': 'VT323' }}>
 						<Button variant='secondary' onClick={handleClose}>
 							Close
 						</Button>

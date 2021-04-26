@@ -46,7 +46,8 @@ const HowToPlay = () => {
 				</p>
 			</Modal.Body>
 
-			<Modal.Footer style={{ backgroundColor: 'black' }}>
+			<Modal.Footer
+				style={{ backgroundColor: 'black', 'font-family': 'VT323' }}>
 				<Button variant='secondary' onClick={handleClose}>
 					Close
 				</Button>
