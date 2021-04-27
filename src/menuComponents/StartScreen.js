@@ -136,7 +136,9 @@ const StartScreen = () => {
 								<Button
 									variant='secondary'
 									size='lg'
-									onClick={handleFemaleTwoSelect}>
+									onClick={handleFemaleTwoSelect}
+									style={{ 'margin-left': '4px'}}
+									>
 									<motion.div
 										whileHover={{ scale: 3 }}
 										style={{
