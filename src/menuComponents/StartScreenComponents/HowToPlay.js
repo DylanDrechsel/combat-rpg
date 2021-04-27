@@ -52,6 +52,11 @@ const HowToPlay = () => {
 							<br />
 							<br />
 							Mission Objective: Make it through the ruins alive.
+							<br />
+							<br />
+							<br />
+							Controls:
+							<span> Up Arrow, Right Arrow, Down Arrow, Left Arrow</span>
 						</p>
 					</Modal.Body>
 
