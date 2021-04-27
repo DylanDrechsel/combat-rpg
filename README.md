@@ -4,6 +4,10 @@
   <img src="https://user-images.githubusercontent.com/78124357/116276132-339cc100-a752-11eb-918c-5e83fc35403d.gif">
 </p>
 
+## Dungeon Dive
+
+Dungeon Dive is a web app using React that is inspired by the early 8-bit GameBoy games. Fight your way through the dungeon to reach the end and survive the many dangers it holds!
+
 ![DungeonDiveMainMenu](https://user-images.githubusercontent.com/78124357/116283881-71054c80-a75a-11eb-92f6-ea4ec14982f1.png)
 
 ![DungeonDiveRPG](https://user-images.githubusercontent.com/78124357/116283890-74003d00-a75a-11eb-801e-ae227722f47e.png)
@@ -13,8 +17,7 @@
 
 
 
-## Getting Started:
-
+## How To Use:
 
 You can test the application yourself by going to https://evening-tor-17066.herokuapp.com/
 
