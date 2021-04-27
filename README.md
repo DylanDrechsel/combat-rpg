@@ -14,7 +14,7 @@ Dungeon Dive is a web app using React that is inspired by the early 8-bit GameBo
 - Computer to battle against
 - Animated text and main screen 
 - Music while playing
-- Fully functional comabt map with move and attack functions
+- Fully functional comabt map with move and attack functions (Move indicated by green tile & Attack indicated by red tile)
 
 ![DungeonDiveMainMenu](https://user-images.githubusercontent.com/78124357/116283881-71054c80-a75a-11eb-92f6-ea4ec14982f1.png)
 
